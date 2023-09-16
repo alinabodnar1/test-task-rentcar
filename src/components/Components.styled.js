@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 // export const List = styled.ul`
@@ -25,32 +25,32 @@ import { Link } from 'react-router-dom';
 //     margin-top: 10px;
 // `;
 export const MainContainer = styled.div`
-    padding: 0 20px;
-    margin: 0 auto;
-    max-width: 960px;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 960px;
+  position: relative;
 `;
 
 export const StyledLink = styled(Link)`
-    color: #3470FF;
-    padding: 5px;
-    display: block; 
-   
+  color: #3470ff;
+  padding: 5px;
+  display: block;
+
   :hover {
-    color: #0B44CD;
-    }
+    color: #0b44cd;
+  }
 `;
 
 export const RentalButton = styled.a`
-  display: inline-flex;
+  display: block;
   width: 83px;
   padding: 12px 50px;
-  justify-content: center;
-  align-items: center;
+  margin: 20px auto;
   border-radius: 12px;
-  background: #FFDAB9;
-  color: #fff;
+  background: #d2691e;
+  color: #ffffff;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.43;
   text-decoration: none;
   border: none;
@@ -58,7 +58,9 @@ export const RentalButton = styled.a`
   outline: none;
   box-shadow: 0px 3.43693px 3.43693px 0px rgba(0, 0, 0, 0.25);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    background: #D2691E;
+
+  &:hover,
+  &:focus {
+    background: #778899;
   }
 `;
