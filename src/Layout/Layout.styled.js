@@ -16,7 +16,8 @@ export const List = styled.ul`
 `; 
 
 export const StyledLink = styled(NavLink)`
-    color: #696969;
+    color: #778899;
+    font-size: large;
     padding: 8px 16px;
     text-decoration: none;
     font-weight: 700;

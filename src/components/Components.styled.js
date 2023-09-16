@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 // export const List = styled.ul`
 //     display: flex;
@@ -29,16 +28,6 @@ export const MainContainer = styled.div`
   margin: 0 auto;
   max-width: 960px;
   position: relative;
-`;
-
-export const StyledLink = styled(Link)`
-  color: #3470ff;
-  padding: 5px;
-  display: block;
-
-  :hover {
-    color: #0b44cd;
-  }
 `;
 
 export const RentalButton = styled.a`

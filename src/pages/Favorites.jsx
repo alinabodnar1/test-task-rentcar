@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { getCarsCatalogue } from '../api/fetchCars';
 import { ToastContainer, toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';
-import { StyledLink } from '../components/Components.styled';
+import { StyledLink } from '../Layout/Layout.styled';
 
 export default function  Favorites ({ data }) {
   // const favorite = useSelector(state => state.favorite);
