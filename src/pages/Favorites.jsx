@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import React, {useState, useEffect} from 'react';
 import { getCarsCatalogue } from '../api/fetchCars';
 import { ToastContainer, toast } from 'react-toastify';

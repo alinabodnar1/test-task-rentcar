@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { getCarsCatalogue } from '../../api/fetchCars';
-import { ToastContainer, toast } from 'react-toastify';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
+// import React, { useState, useEffect } from 'react';
+// import { getCarsCatalogue } from '../../api/fetchCars';
+// import { ToastContainer, toast } from 'react-toastify';
+// import { useLocation } from 'react-router-dom';
 import { Image, Title, Description } from './Home.styled';
 import Container from '../../components/Container';
 import rentcar from '../../images/rent-car.jpg';
