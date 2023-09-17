@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getCarsCatalogue, getCarSearch } from '../../api/fetchCars';
+import { getCarsCatalogue } from '../../api/fetchCars';
 import { ToastContainer, toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';
 import { Wrapper, ListCars } from '../Catalogue/Catalogue.styled';
@@ -8,13 +8,15 @@ import CarCard from '../../components/CarCard/CarCard';
 export default function Catalogue() {
   const [page, setPage] = useState(1);
   const [cars, setCars] = useState([]);
-  const location = useLocation();
+  // const location = useLocation();
 
   const cardsPerPage = 8;
 
   const paginatedCars = cars.slice(0, page * cardsPerPage);
   const getPage = () => setPage(page + 1);
-  const totalPages = Math.ceil(cars.length / cardsPerPage);
+  console.log('getPage:', getPage);
+
+  // const totalPages = Math.ceil(cars.length / cardsPerPage);
 
   useEffect(() => {
     getCarsCatalogue()
