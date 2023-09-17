@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Title = styled.h1`
     display: block;
-    margin-left: 20px;
+    margin: 20px;
+    padding: 10px;
     font-weight: 700;
     color: #404040;
 
@@ -22,7 +23,7 @@ export const Image = styled.img`
 
 export const Description = styled.h3`
     display: block;
-    margin-left: 20px;
+    margin: 20px;
     font-weight: 500;
     color: #404040;
     text-align: justify;

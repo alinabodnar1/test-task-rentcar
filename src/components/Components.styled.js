@@ -26,8 +26,8 @@ import styled from 'styled-components';
 export const MainContainer = styled.div`
   padding: 0 20px;
   margin: 0 auto;
-  max-width: 960px;
-  position: relative;
+  max-width: 1200px;
+  /* position: relative; */
 `;
 
 export const RentalButton = styled.a`

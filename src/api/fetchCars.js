@@ -43,4 +43,17 @@ async function getCarDetails(id) {
     }
 }
 
-export { getCarsCatalogue, getCarDetails };
+async function getCarSearch(query) {
+  try {
+        const url = `${BASE_URL}/search/movie?query=${query}`;
+        startLoader();
+        const response = await axios.get(url);
+        return response.data;
+    } catch (error) {
+        alert('Oops, an error occurred');
+    } finally {
+        stopLoader();
+    } 
+}
+
+export { getCarsCatalogue, getCarDetails, getCarSearch };

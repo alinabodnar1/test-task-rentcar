@@ -1,40 +1,47 @@
-import React, {useState, useEffect} from 'react';
-import { getCarsCatalogue } from '../../api/fetchCars';
+import React, { useState, useEffect } from 'react';
+import { getCarsCatalogue, getCarSearch } from '../../api/fetchCars';
 import { ToastContainer, toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';
-import { StyledLink } from '../../Layout/Layout.styled';
+import { Wrapper, ListCars } from '../Catalogue/Catalogue.styled';
+import CarCard from '../../components/CarCard/CarCard';
 
 export default function Catalogue() {
+  const [page, setPage] = useState(1);
   const [cars, setCars] = useState([]);
   const location = useLocation();
 
+  const cardsPerPage = 8;
+
+  const paginatedCars = cars.slice(0, page * cardsPerPage);
+  const getPage = () => setPage(page + 1);
+  const totalPages = Math.ceil(cars.length / cardsPerPage);
+
   useEffect(() => {
-    getCarsCatalogue().then(data => {
-      console.log('data', data);
-      if (data) {
-        setCars(data);
-      }
-    })
+    getCarsCatalogue()
+      .then(cars => {
+        console.log('cars', cars);
+        if (cars) {
+          setCars(cars);
+        }
+      })
       .catch(() => {
-        toast.error("An error occurred while responding trending movies from the backend.")
+        toast.error(
+          'An error occurred while responding cars from the backend.'
+        );
       });
   }, []);
- 
+
   return (
-    <div>
-      <ul>
-        {cars.map(car => (
-          <StyledLink key={car.id}
-            to={`${car.id}`}
-            state={{from: location}} >
-            
-            {car.model}
-          </StyledLink>
+    <Wrapper>
+      <ListCars>
+        {paginatedCars.map(car => (
+          <CarCard key={car.id} car={car}>
+            {/* to={`${car.id}`} state={{ from: location }} */}
+          </CarCard>
         ))}
-     </ul>
-      <ToastContainer
-            autoClose={3000}
-            position="top-left" />
-    </div>
-  )
+
+        <ToastContainer autoClose={3000} position="top-left" />
+      </ListCars>
+    </Wrapper>
+  );
 }
