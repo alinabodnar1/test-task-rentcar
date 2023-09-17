@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import likeIconNormal from '../../images/normal.png';
+import likeIconActive from '../../images/active.png';
+
 
 export const CardItem = styled.div`
   width: 274px;
@@ -78,7 +81,35 @@ export const SecondaryCarText = styled.div`
   font-weight: 400;
   line-height: 18px;
   border-right: 1px solid rgba(18, 20, 23, 0.2);
-  /* text-shadow: 0 0 1px #858994; */
+
+  &:last-child{
+    border-right: none;
+  }
+`;
+
+export const LikeBtn = styled.button`
+  position: absolute;
+  margin: 0;
+  top: 14px;
+  right: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+`;
+
+export const HeartIcon = styled(likeIconNormal)`
+  display: block;
+  /* color: rgb(255 255 255 / 80%); */
+  background-color: url(`${likeIconNormal}`);
+  width: 18px;
+  height: 18px;
+`;
+
+export const HeartIconBlue = styled(likeIconActive)`
+  display: block;
+  color: #3470ff;
+  width: 18px;
+  height: 18px;
 `;
 
 // export const LearnMoreBtn = styled.button`
@@ -111,26 +142,4 @@ export const SecondaryCarText = styled.div`
 //   }
 // `;
 
-// export const IconBtn = styled.button`
-//   position: absolute;
-//   margin: 0;
-//   top: 14px;
-//   right: 14px;
-//   border: none;
-//   cursor: pointer;
-//   background-color: transparent;
-// `;
 
-// export const HeartIcon = styled(HiOutlineHeart)`
-//   display: block;
-//   color: rgb(255 255 255 / 80%);
-//   width: 18px;
-//   height: 18px;
-// `;
-
-// export const HeartIconBlue = styled(HiHeart)`
-//   display: block;
-//   color: #3470ff;
-//   width: 18px;
-//   height: 18px;
-// `;

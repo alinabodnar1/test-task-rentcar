@@ -1,6 +1,6 @@
 import React from 'react';
-import { CardItem, 
-  InfoWrapper,
+import {  
+  CardItem,
   CardImg,
   MainInfo,
   CarInfo,
@@ -8,44 +8,33 @@ import { CardItem,
   ModelBlue,
   SecondaryInfo,
   SecondaryCarText,
+  LikeBtn,
+  HeartIcon,
+  HeartIconBlue
   } from './CarCard.styled';
 
-export default function CarCard({ car
-  // make,
-  // model,
-  // id,
-  // img,
-  // year,
-  // address,
-  // rentalPrice,
-  // rentalCompany,
-  // type,
-  // functionalities,
-  // fuelConsumption,
-  // engineSize,
-  // description,
-  // accessories,
-  // rentalConditions,
-  // mileage,
-}) {
+export default function CarCard({ car}) {
 
-  // const addressParts = address.split(', ');
-  // const city = addressParts[1];
-  // const country = addressParts[2];
+  const addressParts = car.address.split(', ');
+  const city = addressParts[1];
+  const country = addressParts[2];
+
+  const oneFunctionality = car.functionalities[0];
+  const cutoneFunctionality = oneFunctionality.length >= 27 ? oneFunctionality.slice(0, 27) + '...' : oneFunctionality;
+
 
   return (
     <CardItem>
-      {/* <CarImgWrap> */}
+  
         <CardImg src={car.img} alt={car.make} />
-        {/* <IconBtn */}
-        {/* onClick={!followStatus ? incrementFavorite : decrementFavorite} */}
-        {/* type="button" */}
-        {/* > */}
-        {/* {!followStatus ? <HeartIcon /> : <HeartIconBlue />} */}
-        {/* </IconBtn> */}
-      {/* </CarImgWrap> */}
-
-      {/* <InfoWrapper> */}
+        <LikeBtn
+          // onClick={!followStatus ? incrementFavorite : decrementFavorite}
+          type="button"
+        >
+          {/* {!followStatus ? <HeartIcon /> : <HeartIconBlue />} */}
+          <HeartIcon />
+        </LikeBtn>
+     
         <MainInfo>
           <CarInfo>
             <CarText>{car.make}</CarText>
@@ -58,13 +47,13 @@ export default function CarCard({ car
           <CarText>{car.rentalPrice}</CarText>
         </MainInfo> 
         <SecondaryInfo>
-          <SecondaryCarText>{car.address}</SecondaryCarText>
-          <SecondaryCarText>{car.country}</SecondaryCarText>
+          <SecondaryCarText>{city}</SecondaryCarText>
+          <SecondaryCarText>{country}</SecondaryCarText>
           <SecondaryCarText>{car.rentalCompany}</SecondaryCarText>
           <SecondaryCarText>{car.type}</SecondaryCarText>
           <SecondaryCarText>{car.make}</SecondaryCarText>
           <SecondaryCarText>{car.id}</SecondaryCarText> 
-          <SecondaryCarText>{car.firstFunctionality}</SecondaryCarText>
+          <SecondaryCarText>{cutoneFunctionality}</SecondaryCarText>
           </SecondaryInfo>
         {/* <LearnMoreBtn onClick={openModal}>Learn more</LearnMoreBtn> */}
         {/* {isModalOpen && (
@@ -89,7 +78,7 @@ export default function CarCard({ car
             mileage={mileage}
           />
         )} */}
-      {/* </InfoWrapper> */}
+     
     </CardItem>
   );
 }
