@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from '../../components/Modal/Modal';
+import CarDescribtion from '../CarDescribtion/CarDescribtion';
 import {  
   CardItem,
+  CarImgWrap,
   CardImg,
+  LikeBtn,
+  LikeIconNormal,
+  LikeIconActive,
   MainInfo,
   CarInfo,
   CarText,
   ModelBlue,
   SecondaryInfo,
   SecondaryCarText,
-  LikeBtn,
-  HeartIcon,
-  HeartIconBlue
+  LearnMoreBtn,
   } from './CarCard.styled';
 
 export default function CarCard({ car}) {
-
+  const [isShowModal, setIsShowModal] = useState(false);
+  
   const addressParts = car.address.split(', ');
   const city = addressParts[1];
   const country = addressParts[2];
@@ -22,20 +27,25 @@ export default function CarCard({ car}) {
   const oneFunctionality = car.functionalities[0];
   const cutoneFunctionality = oneFunctionality.length >= 27 ? oneFunctionality.slice(0, 27) + '...' : oneFunctionality;
 
+  const toggleModal = () => {
+    setIsShowModal(!isShowModal);
+} 
 
   return (
     <CardItem>
-  
-        <CardImg src={car.img} alt={car.make} />
+      <CarImgWrap>
+      <CardImg src={car.img} alt={car.make} />
         <LikeBtn
           // onClick={!followStatus ? incrementFavorite : decrementFavorite}
           type="button"
         >
           {/* {!followStatus ? <HeartIcon /> : <HeartIconBlue />} */}
-          <HeartIcon />
+          <LikeIconNormal />
+          <LikeIconActive />
         </LikeBtn>
-     
-        <MainInfo>
+      </CarImgWrap>
+       
+      <MainInfo>
           <CarInfo>
             <CarText>{car.make}</CarText>
             <ModelBlue>
@@ -55,7 +65,12 @@ export default function CarCard({ car}) {
           <SecondaryCarText>{car.id}</SecondaryCarText> 
           <SecondaryCarText>{cutoneFunctionality}</SecondaryCarText>
           </SecondaryInfo>
-        {/* <LearnMoreBtn onClick={openModal}>Learn more</LearnMoreBtn> */}
+        <LearnMoreBtn onClick={toggleModal}>Learn more</LearnMoreBtn>
+        {isShowModal &&
+                    (<Modal onClose={toggleModal}> 
+                         <CarDescribtion car={car}/>
+                         
+                    </Modal>)}
         {/* {isModalOpen && (
           <Modal
             onClose={closeModal}

@@ -42,8 +42,6 @@ export const BackHomeBtn = styled.button`
   font-weight: 500;
   line-height: 24px;
   border-radius: 12px;
-  border: none;
-  cursor: pointer;
   margin-top: 30px;
   box-shadow: 0px 3.43693px 3.43693px 0px rgba(0, 0, 0, 0.25);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
