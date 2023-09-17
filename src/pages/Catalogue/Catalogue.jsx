@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getCarsCatalogue } from '../../api/fetchCars';
 import { ToastContainer, toast } from 'react-toastify';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { Wrapper, ListCars } from '../Catalogue/Catalogue.styled';
 import CarCard from '../../components/CarCard/CarCard';
 
