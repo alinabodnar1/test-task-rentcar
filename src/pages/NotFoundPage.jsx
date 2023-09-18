@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import notFoundImage from './../images/notFoundPage.jpg';
+import notFoundImage from './../images/404.png';
 import Container from '../components/Container';
 import { Image, BackHomeBtn } from './Home/Home.styled';
 

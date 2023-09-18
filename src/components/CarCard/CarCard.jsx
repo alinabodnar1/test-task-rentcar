@@ -68,7 +68,7 @@ export default function CarCard({ car}) {
         <LearnMoreBtn onClick={toggleModal}>Learn more</LearnMoreBtn>
         {isShowModal &&
                     (<Modal onClose={toggleModal}> 
-                         <CarDescribtion car={car}/>
+                         <CarDescribtion car={car} city={city} country={country}/>
                          
                     </Modal>)}
         {/* {isModalOpen && (

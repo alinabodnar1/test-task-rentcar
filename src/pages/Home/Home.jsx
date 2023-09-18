@@ -5,8 +5,8 @@ import React from 'react';
 // import { useLocation } from 'react-router-dom';
 import { Image, Title, Description } from './Home.styled';
 import Container from '../../components/Container';
+import {RentalCarHomePage} from '../../components/Buttons/Buttons';
 import rentcar from '../../images/rent-car.jpg';
-import RentalCarBtn from '../../components/Buttons';
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
         Traveling with our app will give you incredible experiences and
         memories!
       </Description>
-      <RentalCarBtn />
+      <RentalCarHomePage />
     </Container>
   );
 }
