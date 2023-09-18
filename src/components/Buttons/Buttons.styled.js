@@ -42,3 +42,4 @@ export const RentalCarModalBtn = styled.a`
     background: #0B44CD;
   }
 `;
+

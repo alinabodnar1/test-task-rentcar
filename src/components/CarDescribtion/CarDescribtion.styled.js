@@ -73,7 +73,7 @@ export const SecondaryCarText = styled.div`
   border-right: 1px solid rgba(18, 20, 23, 0.2);
   padding-right: 3px;
 
-  &:last-child{
+  &:last-child {
     border-right: none;
   }
 `;
@@ -111,7 +111,7 @@ export const AccessoryList = styled.ul`
   font-weight: 400;
   line-height: 18px;
   gap: 4px; // 3
- `;
+`;
 
 export const AccessoryListItem = styled.li`
   color: rgba(18, 20, 23, 0.5);
@@ -121,7 +121,7 @@ export const AccessoryListItem = styled.li`
   border-right: 1px solid rgba(18, 20, 23, 0.2);
   padding-right: 4px;
 
-  &:last-child{
+  &:last-child {
     border-right: none;
   }
 `;
@@ -140,7 +140,7 @@ export const RentalTitle = styled.p`
 `;
 
 export const RentalInfo = styled.ul`
-  width: 380px; 
+  width: 380px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;

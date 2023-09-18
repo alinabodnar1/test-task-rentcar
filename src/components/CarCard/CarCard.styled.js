@@ -11,11 +11,12 @@ export const CardItem = styled.div`
 `;
 export const CarImgWrap = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const CardImg = styled.img`
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: 268px;
   border-radius: 14px;
 `;
@@ -46,7 +47,7 @@ export const CarText = styled.li`
 `;
 
 export const ModelBlue = styled.div`
-  color: #3470FF;
+  color: #3470ff;
   font-size: 16px;
 `;
 
@@ -65,7 +66,7 @@ export const SecondaryCarText = styled.div`
   line-height: 18px;
   border-right: 1px solid rgba(18, 20, 23, 0.3);
 
-  &:last-child{
+  &:last-child {
     border-right: none;
   }
 `;
@@ -98,15 +99,12 @@ export const LearnMoreBtn = styled.button`
   font-weight: 600;
   line-height: 20px;
   border-radius: 12px;
-  background: #3470FF;
+  background: #3470ff;
   outline: none;
   margin-top: 28px;
   box-shadow: 0px 3.5px 3.5px 0px rgba(0, 0, 0, 0.25);
 
-
   &:hover {
-    background: #0B44CD;
+    background: #0b44cd;
   }
 `;
-
-

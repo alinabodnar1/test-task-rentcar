@@ -5,7 +5,7 @@ import React from 'react';
 // import { useLocation } from 'react-router-dom';
 import { Image, Title, Description } from './Home.styled';
 import Container from '../../components/Container';
-import {RentalCarHomePage} from '../../components/Buttons/Buttons';
+import { RentalCarHomePage } from '../../components/Buttons/Buttons';
 import rentcar from '../../images/rent-car.jpg';
 
 export default function Home() {
