@@ -1,6 +1,6 @@
 import React from 'react';
-import {LoadMoreButton} from '../Buttons/Buttons.styled';
-import  {RentalCarHomePageBtn, RentalCarModalBtn}  from './Buttons.styled';
+import { LoadMoreButton } from '../Buttons/Buttons.styled';
+import { RentalCarHomePageBtn, RentalCarModalBtn } from './Buttons.styled';
 
 export const RentalCarHomePage = () => {
   return (
@@ -12,19 +12,14 @@ export const RentalCarHomePage = () => {
 
 export const RentalCarModal = () => {
   return (
-    <RentalCarModalBtn href="tel:+380730000000">
-      Rental car
-    </RentalCarModalBtn>
+    <RentalCarModalBtn href="tel:+380730000000">Rental car</RentalCarModalBtn>
   );
 };
 
-export const LoadMoreBtn = ({ onClick })=>  {
+export const LoadMoreBtn = ({ onClick }) => {
   return (
-    <LoadMoreButton
-      type="submit" 
-      onClick={onClick}
-    >
+    <LoadMoreButton type="submit" onClick={onClick}>
       Load more
     </LoadMoreButton>
   );
-}
+};

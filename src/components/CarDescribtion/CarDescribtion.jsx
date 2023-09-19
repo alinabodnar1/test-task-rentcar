@@ -1,5 +1,5 @@
 import React from 'react';
-import {RentalCarModal} from '../Buttons/Buttons';
+import { RentalCarModal } from '../Buttons/Buttons';
 import {
   MadalWrapper,
   CarImg,
@@ -21,8 +21,7 @@ import {
   RentalBlock,
 } from './CarDescribtion.styled';
 
-export default function CarDescribtion({ car, city, country, background }) {
-
+export default function CarDescribtion({ car, city, country }) {
   const rentalConditionsSplitted = car.rentalConditions.split('\n', 3);
   const firstElement = rentalConditionsSplitted[0];
   const match = firstElement.match(/\d+/);
@@ -31,7 +30,7 @@ export default function CarDescribtion({ car, city, country, background }) {
   return (
     <MadalWrapper>
       <CarImg src={car.img} alt={car.make} />
-       <InfoWrapper>
+      <InfoWrapper>
         <MainInfo>
           <CarInfo>
             <CarText>{car.make}</CarText>
@@ -53,7 +52,7 @@ export default function CarDescribtion({ car, city, country, background }) {
           </SecondaryCarText>
           <SecondaryCarText>Engine Size: {car.engineSize}</SecondaryCarText>
         </SecondaryInfo>
-         <Descriprion>{car.description}</Descriprion>
+        <Descriprion>{car.description}</Descriprion>
         <Accessories>
           <AccessoriesTitle>Accessories and functionalities:</AccessoriesTitle>
           <AccessoryList>
@@ -65,7 +64,7 @@ export default function CarDescribtion({ car, city, country, background }) {
             ))}
           </AccessoryList>
         </Accessories>
-       <RentalBlock>
+        <RentalBlock>
           <RentalTitle>Rental Conditions:</RentalTitle>
           <RentalInfo>
             <RentalItem>
@@ -82,7 +81,7 @@ export default function CarDescribtion({ car, city, country, background }) {
           </RentalInfo>
         </RentalBlock>
         <RentalCarModal />
-      </InfoWrapper> 
+      </InfoWrapper>
     </MadalWrapper>
   );
 }

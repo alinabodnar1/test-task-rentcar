@@ -27,7 +27,7 @@ export const RentalCarModalBtn = styled.a`
   width: 83px;
   padding: 12px 50px;
   border-radius: 12px;
-  background-color: #3470FF;
+  background-color: #3470ff;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
@@ -39,7 +39,7 @@ export const RentalCarModalBtn = styled.a`
 
   &:hover,
   &:focus {
-    background: #0B44CD;
+    background: #0b44cd;
   }
 `;
 
@@ -52,11 +52,11 @@ export const LoadMoreButton = styled.button`
   line-height: 24px;
   text-decoration-line: underline;
   background-color: transparent;
-  color: #3470FF;
+  color: #3470ff;
   margin-top: 28px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    color: #0B44CD;
+    color: #0b44cd;
   }
 `;

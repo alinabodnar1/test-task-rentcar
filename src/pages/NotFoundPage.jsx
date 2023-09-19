@@ -9,7 +9,7 @@ const NotFoundPage = () => {
   return (
     <Container>
       <BackHomeBtn onClick={() => navigate('/')}>Go Home</BackHomeBtn>
-      <Image src={`${notFoundImage}`} alt="Not Found Page" width={960}/>
+      <Image src={`${notFoundImage}`} alt="Not Found Page" />
     </Container>
   );
 };

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getCarsCatalogue } from '../../api/fetchCars';
 import Container from '../../components/Container';
-import { Wrapper, ListCars } from '../Catalogue/Catalogue.styled';
 import CarCard from '../../components/CarCard/CarCard';
+import { Wrapper, ListCars } from '../Catalogue/Catalogue.styled';
 import { LoadMoreBtn } from '../../components/Buttons/Buttons';
 
 export default function Catalogue() {
@@ -14,12 +14,11 @@ export default function Catalogue() {
   };
 
   useEffect(() => {
-    getCarsCatalogue()
-      .then(cars => {
-        if (cars) {
-          setCars(cars);
-        }
-      });
+    getCarsCatalogue().then(cars => {
+      if (cars) {
+        setCars(cars);
+      }
+    });
   }, []);
 
   const displayedCars = cars.slice(0, loadedCars);

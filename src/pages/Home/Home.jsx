@@ -1,12 +1,8 @@
 import React from 'react';
-// import React, { useState, useEffect } from 'react';
-// import { getCarsCatalogue } from '../../api/fetchCars';
-// import { ToastContainer, toast } from 'react-toastify';
-// import { useLocation } from 'react-router-dom';
-import { Image, Title, Description } from './Home.styled';
+import rentcar from '../../images/rent-car.jpg';
 import Container from '../../components/Container';
 import { RentalCarHomePage } from '../../components/Buttons/Buttons';
-import rentcar from '../../images/rent-car.jpg';
+import { Image, Title, Description } from './Home.styled';
 
 export default function Home() {
   return (
