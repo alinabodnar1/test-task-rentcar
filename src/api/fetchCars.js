@@ -30,15 +30,3 @@ export const getCarsCatalogue = async () => {
     }
 }
 
-
-export const getCarSearch = async (search, page) => {
- 
-  const params = new URLSearchParams({
-     q: search,
-     page,
-     per_page: 8,
-  });
-  
- const { data } = await axios.get(`${BASE_URL}?${params.toString()}`);
- return data;
-};

@@ -28,7 +28,7 @@ export default function CarCard({ car }) {
   const [isShowModal, setIsShowModal] = useState(false);
   const dispatch = useDispatch();
   const favorite = useSelector(state => state.favorite);
-  console.log('favorite:', favorite);
+  console.log('favorite inside CarCard:', favorite);
   const followStatus = favorite.includes(id);
 
   const addressParts = car.address.split(', ');

@@ -1,7 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { favoriteSlice } from './favoritesSlice';
-// import { carsApi } from './usersSlice/slice';
-import { setupListeners } from '@reduxjs/toolkit/query';
+import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
@@ -12,7 +11,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
   key: 'root',
@@ -21,7 +19,6 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-    // [carsApi.reducerPath]: carsApi.reducer,
     favorite: favoriteSlice.reducer,
 });
 
@@ -37,4 +34,3 @@ export const store = configureStore({
     }),
 });
 export const persistor = persistStore(store);
-setupListeners(store.dispatch);
