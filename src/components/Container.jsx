@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { MainContainer } from './Components.styled';
 
 const Container = ({ children }) => {

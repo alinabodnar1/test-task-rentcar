@@ -23,12 +23,12 @@ import {
 } from './CarCard.styled';
 
 export default function CarCard({ car }) {
-  const {id} = car;
-  console.log('id:', id);
+  const { id } = car;
   const [isShowModal, setIsShowModal] = useState(false);
+
   const dispatch = useDispatch();
   const favorite = useSelector(state => state.favorite);
-  console.log('favorite inside CarCard:', favorite);
+
   const followStatus = favorite.includes(id);
 
   const addressParts = car.address.split(', ');
@@ -40,7 +40,7 @@ export default function CarCard({ car }) {
       ? carDescription.slice(0, numberForCut) + '...'
       : carDescription;
 
-  const cutCarModel = (carModel) => (carModel.length >= 8 ? '' : carModel);
+  const cutCarModel = carModel => (carModel.length >= 8 ? '' : carModel);
   const cutModel = cutCarModel(car.model);
 
   const cutMake = cutDescription(car.make, 10);
@@ -62,13 +62,13 @@ export default function CarCard({ car }) {
 
   return (
     <CardItem>
-        <CardImg src={car.img} alt={car.make} />
-        <LikeBtn
-          onClick={!followStatus ? incrementFavorite : decrementFavorite}
-          type="button"
-        >
-          {!followStatus ? <LikeIconNormal /> : <LikeIconActive />}
-        </LikeBtn>
+      <CardImg src={car.img} alt={car.make} />
+      <LikeBtn
+        onClick={!followStatus ? incrementFavorite : decrementFavorite}
+        type="button"
+      >
+        {!followStatus ? <LikeIconNormal /> : <LikeIconActive />}
+      </LikeBtn>
 
       <MainInfo>
         <CarInfo>

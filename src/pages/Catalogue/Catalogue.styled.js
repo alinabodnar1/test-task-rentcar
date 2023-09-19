@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -14,5 +14,4 @@ export const ListCars = styled.ul`
   justify-content: center;
   gap: 29px;
   width: 100%;
-`; 
-
+`;

@@ -6,12 +6,10 @@ import { Wrapper, ListCars } from '../pages/Catalogue/Catalogue.styled';
 import CarCard from '../components/CarCard/CarCard';
 
 export default function Favorites() {
+
   const [cars, setCars] = useState([]);
   const favorite = useSelector(state => state.favorite);
-  console.log('favorite inside Favorite', favorite);
-  console.log('cars:', cars);
   const favoriteCars = cars.filter(car => favorite.includes(car.id));
-  console.log('favoriteCars inside Favorite', favoriteCars);
 
   useEffect(() => {
     getCarsCatalogue().then(cars => {
