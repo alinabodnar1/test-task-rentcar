@@ -3,7 +3,6 @@ import Modal from '../../components/Modal/Modal';
 import CarDescribtion from '../CarDescribtion/CarDescribtion';
 import {
   CardItem,
-  CarImgWrap,
   CardImg,
   LikeBtn,
   LikeIconNormal,
@@ -31,7 +30,6 @@ export default function CarCard({ car }) {
 
   const cutCarModel = (carModel) => (carModel.length >= 8 ? '' : carModel);
   const cutModel = cutCarModel(car.model);
-  console.log('cutModel:', cutModel);
 
   const cutMake = cutDescription(car.make, 10);
   const cutType = cutDescription(car.type, 8);
@@ -45,7 +43,6 @@ export default function CarCard({ car }) {
 
   return (
     <CardItem>
-      <CarImgWrap>
         <CardImg src={car.img} alt={car.make} />
         <LikeBtn
           // onClick={!followStatus ? incrementFavorite : decrementFavorite}
@@ -55,7 +52,6 @@ export default function CarCard({ car }) {
           <LikeIconNormal />
           <LikeIconActive />
         </LikeBtn>
-      </CarImgWrap>
 
       <MainInfo>
         <CarInfo>

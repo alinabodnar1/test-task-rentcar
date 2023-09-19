@@ -3,15 +3,12 @@ import likeIconNormal from '../../images/normal.png';
 import likeIconActive from '../../images/active.png';
 
 export const CardItem = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 274px;
   height: 426px;
   margin-bottom: 20px;
-`;
-export const CarImgWrap = styled.div`
-  position: relative;
-  width: 100%;
 `;
 
 export const CardImg = styled.img`
@@ -19,6 +16,7 @@ export const CardImg = styled.img`
   width: 100%;
   height: 268px;
   border-radius: 14px;
+  object-fit: cover;
 `;
 
 export const MainInfo = styled.div`
