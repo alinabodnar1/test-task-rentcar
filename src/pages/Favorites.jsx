@@ -1,114 +1,61 @@
-import React, { useEffect, createContext, useReducer } from 'react';
-// import Searchbar from '../components/Searchbar/Searchbar';
-import LoadMore from './LoadMore/LoadMore';
-// import Loader from './Loader/Loader';
+import React, { useState, useEffect } from 'react';
 import { getCarsCatalogue } from '../api/fetchCars';
 import { ToastContainer, toast } from 'react-toastify';
+// import { useLocation } from 'react-router-dom';
+import { Wrapper, ListCars } from '../pages/Catalogue/Catalogue.styled';
+import CarCard from '../components/CarCard/CarCard';
+import {LoadMoreBtn} from '../components/Buttons/Buttons';
 
-export const GalleryContext = createContext();
-const initialState = {
-  // searchText: '',
-  cars: [],
-  isLoading: false,
-  page: 1
-}
-function reducer(state,{type,payload}) {
-  switch (type) {
-    case 'submit':
-      return {
-        ...state,
-        ...payload
-      }
-    case 'setImages':
-      return {
-        ...state,
-        pictures: [...state.pictures, ...payload]
-      }
-    case 'setLoadingFalse':
-      return {
-        ...state,
-        isLoading: false
-      }
-    default:
-      return state;
-  }
-}
 export default function Favorites() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const handleSearch = () => {
- 
-    dispatch({
-      type: 'submit',
-      payload: {
-        searchText: searchText.trim(),
-        pictures: [],
-        isLoading: true,
-        page: 1
-    }})
-  }
+  // const [page, setPage] = useState(1);
+  const [loadedCars, setLoadedCars] = useState(8); 
+  const [cars, setCars] = useState([]); // setImages
+
+  const loadMoreCars = () => { 
+    setLoadedCars(loadedCars + 8); 
+  }; 
   
   useEffect(() => {
-    if (!state.searchText) {
-      return;
-    }
-    getPictures(state.searchText, state.page).then((data) => {
-      if (data.total === 0) {
-        toast.error("Sorry, there are no images matching your search query. Please try again.");
-        return;
-      }
-      if (data.hits) {
-        dispatch({
-          type: 'setImages',
-          payload: data.hits
-        })
-      }
-    })
-      .catch(() => {
-        toast.error("An error occurred while responding from the backend.")
+    getCarsCatalogue()
+      .then(cars => {
+        console.log('cars', cars);
+        if (cars) {
+          setCars(cars);
+        }
       })
-      .finally(() => {
-        dispatch({
-          type: "setLoadingFalse"
-        })
+      .catch(() => {
+        toast.error(
+          'An error occurred while responding cars from the backend.'
+        );
       });
+  }, []);
 
-}, [state.page, state.searchText]);
-
-    const loadMore = () => {
-      dispatch({
-        type: "submit",
-        payload: {
-          page: state.page + 1,
-          isLoading: true
-      }})
-    }
+  const displayedCars = cars.slice(0, loadedCars); 
   
-  const { pictures, isLoading } = state;
-    return (
-      <GalleryContext.Provider value={{
-        handleSearch,
-        items: pictures,
-        isLoading,
-        onClick: loadMore
-      }}>
-        <Searchbar  />
-           {isLoading && (
-                    <div style={{marginLeft: "10px"}}>
-                        <p style={{color: "green"}}>Loading...</p>
-                        <Loader />
-                    </div>)
-            }
-        <ImageGallery/>
+  // return (
+  //   {displayedImages.map((image) => ( 
+  //      {image.description}
+  //       ))} 
+    // {loadedImages < images.length && ( 
+    //   Load More
+    // )}
+  //   ); }; 
 
-        {pictures?.length > 0 && !isLoading && (
-            <LoadMore  />
-        )}
-       
-        <ToastContainer
-            autoClose={3000}
-            position="top-left" />
-                
-      </GalleryContext.Provider>
-    )
-  }
 
+  return (
+    <Wrapper>
+      <ListCars>
+        {displayedCars.map(car => (
+          <CarCard key={car.id} car={car}>
+            {/* to={`${car.id}`} state={{ from: location }} */}
+          </CarCard>
+        ))}
+            {loadedCars < cars.length && ( 
+      <LoadMoreBtn onClick={loadMoreCars}/>
+    )}
+
+        <ToastContainer autoClose={3000} position="top-left" />
+      </ListCars>
+    </Wrapper>
+  );
+}

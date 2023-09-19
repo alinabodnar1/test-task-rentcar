@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getCarsCatalogue } from '../../api/fetchCars';
 import { ToastContainer, toast } from 'react-toastify';
-// import { useLocation } from 'react-router-dom';
 import { Wrapper, ListCars } from '../Catalogue/Catalogue.styled';
 import CarCard from '../../components/CarCard/CarCard';
 import {LoadMore} from '../../components/Buttons/Buttons';
@@ -9,7 +8,6 @@ import {LoadMore} from '../../components/Buttons/Buttons';
 export default function Catalogue() {
   const [page, setPage] = useState(1);
   const [cars, setCars] = useState([]);
-  // const location = useLocation();
 
   const cardsPerPage = 8;
 

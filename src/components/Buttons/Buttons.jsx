@@ -1,3 +1,5 @@
+import React from 'react';
+import {LoadMoreButton} from '../Buttons/Buttons.styled';
 import  {RentalCarHomePageBtn, RentalCarModalBtn}  from './Buttons.styled';
 
 export const RentalCarHomePage = () => {
@@ -16,11 +18,13 @@ export const RentalCarModal = () => {
   );
 };
 
-// export const LoadMore = ({ onClick }) => (
-//   <LoadMoreBtn
-//     type="button"
-//     onClick={onClick}
-//   >
-//     Load more
-//   </LoadMoreBtn>
-// );
+export const LoadMoreBtn = ({ onClick })=>  {
+  return (
+    <LoadMoreButton
+      type="submit" // "button"
+      onClick={onClick}
+    >
+      Load more
+    </LoadMoreButton>
+  );
+}

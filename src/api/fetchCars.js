@@ -13,14 +13,13 @@ export function stopLoader() {
 
 const BASE_URL = 'https://648c36ec8620b8bae7ec7a57.mockapi.io/advert/';
 
-async function getCarsCatalogue() {
+
+export const getCarsCatalogue = async () => {
+
   try {
         const url = `${BASE_URL}`;
         startLoader();
         const response = await axios.get(url);
-
-        // console.log('data.results', response.data);
-
         return response.data;
 
     } catch (error) {
@@ -30,30 +29,16 @@ async function getCarsCatalogue() {
     }
 }
 
-async function getCarDetails(id) {
-  try {
-        const url = `${BASE_URL}/${id}`;
-        startLoader();
-        const response = await axios.get(url);
-        return response.data;
-    } catch (error) {
-        alert('Oops, an error occurred');
-    } finally {
-        stopLoader();
-    }
-}
 
-async function getCarSearch(query) {
-  try {
-        const url = `${BASE_URL}/search/movie?query=${query}`;
-        startLoader();
-        const response = await axios.get(url);
-        return response.data;
-    } catch (error) {
-        alert('Oops, an error occurred');
-    } finally {
-        stopLoader();
-    } 
-}
-
-export { getCarsCatalogue, getCarDetails, getCarSearch };
+export const getCarSearch = async (search, page) => {
+ 
+  const params = new URLSearchParams({
+     q: search,
+     page,
+     per_page: 8,
+  });
+  
+ const { data } = await axios.get(`${BASE_URL}?${params.toString()}`);
+ console.log('cars inside getCarSearch:', data)
+ return data;
+};
