@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../../components/Modal/Modal';
 import CarDescribtion from '../CarDescribtion/CarDescribtion';
+import {
+  minusToFavoriteList,
+  plusToFavoriteList,
+} from '../../redux/favoritesSlice';
+
 import {
   CardItem,
   CardImg,
@@ -17,7 +23,13 @@ import {
 } from './CarCard.styled';
 
 export default function CarCard({ car }) {
+  const {id} = car;
+  console.log('id:', id);
   const [isShowModal, setIsShowModal] = useState(false);
+  const dispatch = useDispatch();
+  const favorite = useSelector(state => state.favorite);
+  console.log('favorite:', favorite);
+  const followStatus = favorite.includes(id);
 
   const addressParts = car.address.split(', ');
   const city = addressParts[1];
@@ -41,16 +53,21 @@ export default function CarCard({ car }) {
     setIsShowModal(!isShowModal);
   };
 
+  const incrementFavorite = () => {
+    dispatch(plusToFavoriteList(id));
+  };
+  const decrementFavorite = () => {
+    dispatch(minusToFavoriteList(id));
+  };
+
   return (
     <CardItem>
         <CardImg src={car.img} alt={car.make} />
         <LikeBtn
-          // onClick={!followStatus ? incrementFavorite : decrementFavorite}
+          onClick={!followStatus ? incrementFavorite : decrementFavorite}
           type="button"
         >
-          {/* {!followStatus ? <HeartIcon /> : <HeartIconBlue />} */}
-          <LikeIconNormal />
-          <LikeIconActive />
+          {!followStatus ? <LikeIconNormal /> : <LikeIconActive />}
         </LikeBtn>
 
       <MainInfo>

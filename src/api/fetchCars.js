@@ -13,10 +13,6 @@ export function stopLoader() {
 };
 
 
-const errorFromBackend = (message) =>{
-
-}
-
 const BASE_URL = 'https://648c36ec8620b8bae7ec7a57.mockapi.io/advert/';
 
 export const getCarsCatalogue = async () => {
