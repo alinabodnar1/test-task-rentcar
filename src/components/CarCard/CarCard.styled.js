@@ -55,7 +55,8 @@ export const SecondaryInfo = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px;
+  width: 274px;
+  gap: 3px;
 `;
 
 export const SecondaryCarText = styled.div`

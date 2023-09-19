@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center; */
+  align-items: center;
   margin-top: 50px;
-  /* justify-content: center; */
+  justify-content: center;
 `;
 
 export const ListCars = styled.ul`

@@ -24,11 +24,20 @@ export default function CarCard({ car }) {
   const city = addressParts[1];
   const country = addressParts[2];
 
+  const cutDescription = (carDescription, numberForCut) =>
+    carDescription.length >= numberForCut
+      ? carDescription.slice(0, numberForCut) + '...'
+      : carDescription;
+
+  const cutCarModel = (carModel) => (carModel.length >= 8 ? '' : carModel);
+  const cutModel = cutCarModel(car.model);
+  console.log('cutModel:', cutModel);
+
+  const cutMake = cutDescription(car.make, 10);
+  const cutType = cutDescription(car.type, 8);
+
   const oneFunctionality = car.functionalities[0];
-  const cutoneFunctionality =
-    oneFunctionality.length >= 27
-      ? oneFunctionality.slice(0, 27) + '...'
-      : oneFunctionality;
+  const cutFirstFunctionality = cutDescription(oneFunctionality, 18);
 
   const toggleModal = () => {
     setIsShowModal(!isShowModal);
@@ -50,11 +59,11 @@ export default function CarCard({ car }) {
 
       <MainInfo>
         <CarInfo>
-          <CarText>{car.make}</CarText>
-          <ModelBlue>
-            {car.model}
+          <CarText>
+            {car.make}
             <span style={{ color: 'black' }}>,</span>
-          </ModelBlue>
+          </CarText>
+          <ModelBlue>{cutModel}</ModelBlue>
           <CarText>{car.year}</CarText>
         </CarInfo>
         <CarText>{car.rentalPrice}</CarText>
@@ -63,10 +72,10 @@ export default function CarCard({ car }) {
         <SecondaryCarText>{city}</SecondaryCarText>
         <SecondaryCarText>{country}</SecondaryCarText>
         <SecondaryCarText>{car.rentalCompany}</SecondaryCarText>
-        <SecondaryCarText>{car.type}</SecondaryCarText>
-        <SecondaryCarText>{car.make}</SecondaryCarText>
+        <SecondaryCarText>{cutType}</SecondaryCarText>
+        <SecondaryCarText>{cutMake}</SecondaryCarText>
         <SecondaryCarText>{car.id}</SecondaryCarText>
-        <SecondaryCarText>{cutoneFunctionality}</SecondaryCarText>
+        <SecondaryCarText>{cutFirstFunctionality}</SecondaryCarText>
       </SecondaryInfo>
       <LearnMoreBtn onClick={toggleModal}>Learn more</LearnMoreBtn>
       {isShowModal && (

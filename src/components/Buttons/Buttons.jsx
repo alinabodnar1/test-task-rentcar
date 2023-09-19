@@ -21,7 +21,7 @@ export const RentalCarModal = () => {
 export const LoadMoreBtn = ({ onClick })=>  {
   return (
     <LoadMoreButton
-      type="submit" // "button"
+      type="submit" 
       onClick={onClick}
     >
       Load more

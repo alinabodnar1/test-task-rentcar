@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { getCarsCatalogue } from '../api/fetchCars';
 import { ToastContainer, toast } from 'react-toastify';
-// import { useLocation } from 'react-router-dom';
 import { Wrapper, ListCars } from '../pages/Catalogue/Catalogue.styled';
 import CarCard from '../components/CarCard/CarCard';
-import {LoadMoreBtn} from '../components/Buttons/Buttons';
+import { LoadMoreBtn } from '../components/Buttons/Buttons';
 
 export default function Favorites() {
-  // const [page, setPage] = useState(1);
-  const [loadedCars, setLoadedCars] = useState(8); 
-  const [cars, setCars] = useState([]); // setImages
+  const [loadedCars, setLoadedCars] = useState(8);
+  const [cars, setCars] = useState([]); 
 
-  const loadMoreCars = () => { 
-    setLoadedCars(loadedCars + 8); 
-  }; 
-  
+  const loadMoreCars = () => {
+    setLoadedCars(loadedCars + 8);
+  };
+
   useEffect(() => {
     getCarsCatalogue()
       .then(cars => {
-        console.log('cars', cars);
         if (cars) {
           setCars(cars);
         }
@@ -30,32 +27,18 @@ export default function Favorites() {
       });
   }, []);
 
-  const displayedCars = cars.slice(0, loadedCars); 
-  
-  // return (
-  //   {displayedImages.map((image) => ( 
-  //      {image.description}
-  //       ))} 
-    // {loadedImages < images.length && ( 
-    //   Load More
-    // )}
-  //   ); }; 
-
+  const displayedCars = cars.slice(0, loadedCars);
 
   return (
     <Wrapper>
       <ListCars>
         {displayedCars.map(car => (
-          <CarCard key={car.id} car={car}>
-            {/* to={`${car.id}`} state={{ from: location }} */}
-          </CarCard>
+          <CarCard key={car.id} car={car}/>
         ))}
-            {loadedCars < cars.length && ( 
-      <LoadMoreBtn onClick={loadMoreCars}/>
-    )}
-
-        <ToastContainer autoClose={3000} position="top-left" />
+        
       </ListCars>
+      {loadedCars < cars.length && <LoadMoreBtn onClick={loadMoreCars} />}
     </Wrapper>
+    
   );
 }
