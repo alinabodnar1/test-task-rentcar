@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import {
   Backdrop,
   ModalContainer,
@@ -24,7 +25,7 @@ export default function Modal({ children, onClose }) {
     };
   }, [onClose]);
 
-  return (
+  return createPortal(
     <Backdrop onClick={handleBackDrop}>
       <ModalContainer>
         <ModalCloseBtn
@@ -36,6 +37,7 @@ export default function Modal({ children, onClose }) {
         </ModalCloseBtn>
         {children}
       </ModalContainer>
-    </Backdrop>
+    </Backdrop>,
+    document.body
   );
 }

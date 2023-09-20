@@ -7,8 +7,8 @@ export const Backdrop = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
-  background-color: rgba(18, 20, 23, 0.5);
+  overflow-y: scroll;
+  background-color: var(--primaryTextColor);
   z-index: 100;
 `;
 export const ModalContainer = styled.div`
@@ -20,8 +20,8 @@ export const ModalContainer = styled.div`
   max-width: 472px;
   border-radius: 24px;
   background-color: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--boxShadow);
+  transition: all 250ms var(--funcTransition);;
 `;
 
 export const ModalCloseBtn = styled.button`

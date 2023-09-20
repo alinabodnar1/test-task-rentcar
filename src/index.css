@@ -1,22 +1,31 @@
 @import-normalize; /* bring in normalize.css styles */
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Manrope:wght@400;500;600;700;900&display=swap');
 
+:root {
+  --buttonColor: #3470ff;
+  --buttonHoverColor: #0b44cd;
+  --primaryTextColor: rgba(18, 20, 23, 0.50);
+  --secondaryTextColor: #121417;
+  --borderLineColor: rgba(18, 20, 23, 0.15);
+  --secondaryBGColor: #d2691e;
+  --titleColor: #404040;
+  --funcTransition: cubic-bezier(0.4, 0, 0.2, 1);
+  --boxShadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
 body {
   margin: 0;
   font-family: 'Manrope', sans-serif;
-  background-color: #FFE4B5;
-  background: linear-gradient(
-    180deg,
-    #FFFFFF 0%,
-    #FFDAB9 100%
+  background-color: #ffe4b5;
+  background: linear-gradient(180deg, #ffffff 0%, #ffdab9 100%);
 
-  );
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   min-height: 100vh;
   letter-spacing: 0.02em;
   font-size: 14px;
+  font-weight: 400;
   margin: 0 auto;
   transition: 1.5s;
 
@@ -40,6 +49,7 @@ h3,
 h4,
 p {
   margin: 0px;
+  padding: 0;
 }
 
 ul,

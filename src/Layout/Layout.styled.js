@@ -23,12 +23,12 @@ export const StyledLink = styled(NavLink)`
   
     &:hover,
     &:focus {
-    color: #D2691E;
+    color: var(--secondaryBGColor);
     scale: 1.03;
   }
 
     &.active {
-    color: #3470FF;
+    color: var(--buttonColor);
     }
 `;
 

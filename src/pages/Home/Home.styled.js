@@ -5,12 +5,12 @@ export const Title = styled.h1`
   margin: 20px;
   padding: 10px;
   font-weight: 700;
-  color: #404040;
+  color: var(--titleColor);
 
   span {
     font-size: 1.5em;
-    background-color: #d2691e;
-    color: #fff;
+    background-color: var(--secondaryBGColor);
+    color: #ffffff;
   }
 `;
 export const Image = styled.img`
@@ -25,7 +25,7 @@ export const Description = styled.h3`
   display: block;
   margin: 20px;
   font-weight: 500;
-  color: #404040;
+  color: var(--titleColor);
   text-align: justify;
 `;
 
@@ -34,17 +34,16 @@ export const BackHomeBtn = styled.button`
   top: 50px;
   left: 50px;
   padding: 10px 20px;
-  background: #d2691e;
+  background: var(--secondaryBGColor);
   color: #ffffff;
   font-family: Manrope;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 24px;
   border-radius: 12px;
   margin-top: 30px;
-  box-shadow: 0px 3.43693px 3.43693px 0px rgba(0, 0, 0, 0.25);
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--boxShadow);
+  transition: all 250ms var(--funcTransition);
 
   &:hover,
   &:focus {

@@ -18,7 +18,6 @@ import {
   RentalTitle,
   RentalItem,
   RentalInfo,
-  RentalBlock,
 } from './CarDescribtion.styled';
 
 export default function CarDescribtion({ car, city, country }) {
@@ -64,7 +63,6 @@ export default function CarDescribtion({ car, city, country }) {
             ))}
           </AccessoryList>
         </Accessories>
-        <RentalBlock>
           <RentalTitle>Rental Conditions:</RentalTitle>
           <RentalInfo>
             <RentalItem>
@@ -79,7 +77,6 @@ export default function CarDescribtion({ car, city, country }) {
               Price: <span>{car.rentalPrice}</span>
             </RentalItem>
           </RentalInfo>
-        </RentalBlock>
         <RentalCarModal />
       </InfoWrapper>
     </MadalWrapper>

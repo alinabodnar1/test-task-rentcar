@@ -39,13 +39,13 @@ export const CarText = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #121417;
+  color: var(--secondaryTextColor);
   font-size: 16px;
   line-height: 24px;
 `;
 
 export const ModelBlue = styled.div`
-  color: #3470ff;
+  color: var(--buttonColor);
   font-size: 16px;
 `;
 
@@ -59,11 +59,11 @@ export const SecondaryInfo = styled.div`
 
 export const SecondaryCarText = styled.div`
   padding-right: 4px;
-  color: rgba(18, 20, 23, 0.5);
+  color: var(--primaryTextColor);
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
-  border-right: 1px solid rgba(18, 20, 23, 0.3);
+  border-right: 1px solid var(--primaryTextColor);
 
   &:last-child {
     border-right: none;
@@ -91,19 +91,19 @@ export const LikeIconActive = styled.div`
 export const LearnMoreBtn = styled.button`
   width: 274px;
   padding: 12px 0;
-  color: #fff;
+  color: #ffffff;
   font-family: Manrope;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
   border-radius: 12px;
-  background: #3470ff;
+  background: var(--buttonColor);
   outline: none;
   margin-top: 28px;
-  box-shadow: 0px 3.5px 3.5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--boxShadow);
 
   &:hover {
-    background: #0b44cd;
+    background: var(--buttonHoverColor);
   }
 `;

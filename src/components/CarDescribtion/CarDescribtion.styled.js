@@ -2,15 +2,13 @@ import styled from 'styled-components';
 
 export const MadalWrapper = styled.div`
   position: relative;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 24px;
 `;
 
 export const CarImg = styled.img`
   display: block;
   width: 100%;
-  max-width: 100%;
-  width: 461px;
   height: 248px;
   object-fit: cover;
   border-radius: 14px;
@@ -41,13 +39,13 @@ export const CarText = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #121417;
+  color: var(--secondaryTextColor);
   font-size: 16px;
   line-height: 24px;
 `;
 
 export const ModelBlue = styled.div`
-  color: #3470ff;
+  color: var(--buttonColor);
   font-size: 16px;
 `;
 
@@ -55,23 +53,22 @@ export const SecondaryInfo = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 300px;
-  color: rgba(18, 20, 23, 0.5);
-
+  width: 400px;
+  margin-bottom: 14px;
+  gap: 5px;
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
-  gap: 3px;
-  margin-bottom: 14px;
+  color: var(--primaryTextColor);
 `;
 
 export const SecondaryCarText = styled.div`
-  color: rgba(18, 20, 23, 0.5);
+  color: var(--primaryTextColor);
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
-  border-right: 1px solid rgba(18, 20, 23, 0.2);
-  padding-right: 3px;
+  border-right: 1px solid var(--borderLineColor);
+  padding-right: 5px;
 
   &:last-child {
     border-right: none;
@@ -79,9 +76,7 @@ export const SecondaryCarText = styled.div`
 `;
 
 export const Descriprion = styled.p`
-  color: #121417;
-  font-size: 14px;
-  font-style: normal;
+  color: var(--secondaryTextColor);
   font-weight: 400;
   line-height: 20px;
 `;
@@ -93,7 +88,7 @@ export const Accessories = styled.div`
 `;
 
 export const AccessoriesTitle = styled.p`
-  color: #121417;
+  color: var(--secondaryTextColor);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -105,35 +100,27 @@ export const AccessoryList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  color: rgba(18, 20, 23, 0.5);
-
+  color: var(--primaryTextColor);
   font-size: 12px;
-  font-weight: 400;
   line-height: 18px;
-  gap: 4px; // 3
+  gap: 5px; 
 `;
 
 export const AccessoryListItem = styled.li`
-  color: rgba(18, 20, 23, 0.5);
+  color: var(--primaryTextColor);
   font-size: 12px;
-  font-weight: 400;
   line-height: 18px;
-  border-right: 1px solid rgba(18, 20, 23, 0.2);
-  padding-right: 4px;
+  border-right: 1px solid var(--borderLineColor);
+  padding-right: 5px;
 
   &:last-child {
     border-right: none;
   }
 `;
 
-export const RentalBlock = styled.div`
-  padding: 0;
-  margin: 0;
-`;
-
 export const RentalTitle = styled.p`
   margin-bottom: 8px;
-  color: #121417;
+  color: var(--secondaryTextColor);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.43;
@@ -153,11 +140,10 @@ export const RentalItem = styled.li`
   background: #f9f9f9;
   color: #363535;
   font-size: 12px;
-  font-weight: 400;
   line-height: 1.5;
 
   & span {
-    color: #3470ff;
+    color: var(--buttonColor);
     font-family: Montserrat;
     font-size: 12px;
     font-weight: 600;

@@ -6,15 +6,14 @@ export const RentalCarHomePageBtn = styled.a`
   padding: 12px 50px;
   margin: 20px auto;
   border-radius: 12px;
-  background-color: #d2691e;
+  background-color: var(--secondaryBGColor);
   color: #ffffff;
-  font-size: 14px;
   font-weight: 700;
   line-height: 1.43;
   text-decoration: none;
   outline: none;
-  box-shadow: 0px 3.5px 3.5px 0px rgba(0, 0, 0, 0.25);
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--boxShadow);
+  transition: all 250ms var(--funcTransition);
 
   &:hover,
   &:focus {
@@ -27,19 +26,18 @@ export const RentalCarModalBtn = styled.a`
   width: 83px;
   padding: 12px 50px;
   border-radius: 12px;
-  background-color: #3470ff;
+  background-color: var(--buttonColor);
   color: #ffffff;
-  font-size: 14px;
   font-weight: 700;
   line-height: 1.43;
   text-decoration: none;
   outline: none;
-  box-shadow: 0px 3.5px 3.5px 0px rgba(0, 0, 0, 0.25);
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--boxShadow);
+  transition: all 250ms var(--funcTransition);
 
   &:hover,
   &:focus {
-    background: #0b44cd;
+    background: var(--buttonHoverColor);
   }
 `;
 
@@ -52,11 +50,11 @@ export const LoadMoreButton = styled.button`
   line-height: 24px;
   text-decoration-line: underline;
   background-color: transparent;
-  color: #3470ff;
+  color: var(--buttonColor);
   margin-top: 28px;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 250ms var(--funcTransition);
 
   &:hover {
-    color: #0b44cd;
+    color: var(--buttonHoverColor);
   }
 `;
