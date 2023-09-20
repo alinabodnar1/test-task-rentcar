@@ -12,11 +12,11 @@ export default function Home() {
       </Title>
       <Image src={`${rentcar}`} alt="Rent cars" />
       <Description>
-        A car rental application is a convenient program that allows customers
-        to easily browse and book rental cars. This app provides an interface
-        for selecting cars, filtering them by rental cost, and mileage.
-        Traveling with our app will give you incredible experiences and
-        memories!
+        The car rental app is a user-friendly app that allows customers to
+        easily browse and book rental cars. This application provides an
+        interface for viewing complete information and ordering cars, as well as
+        for choosing your favorite cars. Traveling with our app will give you
+        incredible experiences and memories!
       </Description>
       <RentalCarHomePage />
     </Container>
