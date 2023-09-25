@@ -62,7 +62,7 @@ export default function CarCard({ car }) {
 
   return (
     <CardItem>
-      <CardImg src={car.img} alt={car.make} />
+      <CardImg src={car.img} alt={car.make} width={274} height={268}/>
       <LikeBtn
         onClick={!followStatus ? incrementFavorite : decrementFavorite}
         type="button"

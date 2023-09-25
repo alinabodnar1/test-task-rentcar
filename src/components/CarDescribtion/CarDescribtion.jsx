@@ -18,6 +18,7 @@ import {
   RentalTitle,
   RentalItem,
   RentalInfo,
+  ItemMontserrat,
 } from './CarDescribtion.styled';
 
 export default function CarDescribtion({ car, city, country }) {
@@ -28,7 +29,7 @@ export default function CarDescribtion({ car, city, country }) {
 
   return (
     <MadalWrapper>
-      <CarImg src={car.img} alt={car.make} />
+      <CarImg src={car.img} alt={car.make} width={472} height={248}/>
       <InfoWrapper>
         <MainInfo>
           <CarInfo>
@@ -63,20 +64,26 @@ export default function CarDescribtion({ car, city, country }) {
             ))}
           </AccessoryList>
         </Accessories>
-          <RentalTitle>Rental Conditions:</RentalTitle>
-          <RentalInfo>
-            <RentalItem>
+        <RentalTitle>Rental Conditions:</RentalTitle>
+        <RentalInfo>
+          <RentalItem>
+            <ItemMontserrat>
               Minimum age: <span>{number}</span>
-            </RentalItem>
-            <RentalItem>{rentalConditionsSplitted[1]}</RentalItem>
-            <RentalItem>{rentalConditionsSplitted[2]}</RentalItem>
-            <RentalItem>
+            </ItemMontserrat>
+          </RentalItem>
+          <RentalItem>{rentalConditionsSplitted[1]}</RentalItem>
+          <RentalItem>{rentalConditionsSplitted[2]}</RentalItem>
+          <RentalItem>
+            <ItemMontserrat>
               Mileage: <span>{car.mileage.toLocaleString('en-EN')}</span>
-            </RentalItem>
-            <RentalItem>
+            </ItemMontserrat>
+          </RentalItem>
+          <RentalItem>
+            <ItemMontserrat>
               Price: <span>{car.rentalPrice}</span>
-            </RentalItem>
-          </RentalInfo>
+            </ItemMontserrat>
+          </RentalItem>
+        </RentalInfo>
         <RentalCarModal />
       </InfoWrapper>
     </MadalWrapper>

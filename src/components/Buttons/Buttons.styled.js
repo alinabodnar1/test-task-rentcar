@@ -42,16 +42,18 @@ export const RentalCarModalBtn = styled.a`
 `;
 
 export const LoadMoreButton = styled.button`
+  display: flex;
   width: 200px;
+  margin: 0 auto;
+  margin-top: 28px;
   padding: 12px 0;
-  font-family: Manrope;
+  font-family: 'Manrope';
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   text-decoration-line: underline;
   background-color: transparent;
   color: var(--buttonColor);
-  margin-top: 28px;
   transition: all 250ms var(--funcTransition);
 
   &:hover {

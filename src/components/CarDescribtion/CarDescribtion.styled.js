@@ -103,7 +103,7 @@ export const AccessoryList = styled.ul`
   color: var(--primaryTextColor);
   font-size: 12px;
   line-height: 18px;
-  gap: 5px; 
+  gap: 5px;
 `;
 
 export const AccessoryListItem = styled.li`
@@ -144,10 +144,11 @@ export const RentalItem = styled.li`
 
   & span {
     color: var(--buttonColor);
-    font-family: Montserrat;
-    font-size: 12px;
     font-weight: 600;
-    line-height: 1.5;
     letter-spacing: -0.24px;
   }
+`;
+
+export const ItemMontserrat = styled.p`
+  font-family: 'Montserrat';
 `;

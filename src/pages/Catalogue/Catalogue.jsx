@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getCarsCatalogue } from '../../api/fetchCars';
 import Container from '../../components/Container';
 import CarCard from '../../components/CarCard/CarCard';
-import { Wrapper, ListCars } from '../Catalogue/Catalogue.styled';
+import { ListCars } from '../Catalogue/Catalogue.styled';
 import { LoadMoreBtn } from '../../components/Buttons/Buttons';
 
 export default function Catalogue() {
@@ -25,14 +25,12 @@ export default function Catalogue() {
 
   return (
     <Container>
-      <Wrapper>
         <ListCars>
           {displayedCars.map(car => (
             <CarCard key={car.id} car={car} />
           ))}
         </ListCars>
         {loadedCars < cars.length && <LoadMoreBtn onClick={loadMoreCars} />}
-      </Wrapper>
     </Container>
   );
 }

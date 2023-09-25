@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import likeIconNormal from '../../images/normal.png';
 import likeIconActive from '../../images/active.png';
 
-export const CardItem = styled.div`
+export const CardItem = styled.li`
   position: relative;
   display: flex;
   flex-direction: column;

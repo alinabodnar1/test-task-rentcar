@@ -21,13 +21,13 @@ export default function Favorites() {
 
   return (
     <Container>
-      <Wrapper>
+      {/* <Wrapper> */}
         <ListCars>
           {favoriteCars.map(car => (
             <CarCard key={car.id} car={car} />
           ))}
         </ListCars>
-      </Wrapper>
+      {/* </Wrapper> */}
     </Container>
   );
 }

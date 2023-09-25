@@ -1,5 +1,6 @@
 @import-normalize; /* bring in normalize.css styles */
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Manrope:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat&display=swap');
 
 :root {
   --buttonColor: #3470ff;
@@ -15,7 +16,7 @@
 
 body {
   margin: 0;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Manrope', sans-serif, 'Montserrat';
   background-color: #ffe4b5;
   background: linear-gradient(180deg, #ffffff 0%, #ffdab9 100%);
 
