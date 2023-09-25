@@ -20,9 +20,6 @@ export const InfoWrapper = styled.div`
 `;
 
 export const MainInfo = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 14px;
   margin-bottom: 8px;
   font-weight: 500;
@@ -36,9 +33,6 @@ export const CarInfo = styled.ul`
 `;
 
 export const CarText = styled.li`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   color: var(--secondaryTextColor);
   font-size: 16px;
   line-height: 24px;

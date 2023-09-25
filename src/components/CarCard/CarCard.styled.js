@@ -4,8 +4,6 @@ import likeIconActive from '../../images/active.png';
 
 export const CardItem = styled.li`
   position: relative;
-  display: flex;
-  flex-direction: column;
   width: 274px;
   height: 426px;
   margin-bottom: 20px;
@@ -36,9 +34,6 @@ export const CarInfo = styled.ul`
 `;
 
 export const CarText = styled.li`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   color: var(--secondaryTextColor);
   font-size: 16px;
   line-height: 24px;
