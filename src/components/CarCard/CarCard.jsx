@@ -90,7 +90,7 @@ export default function CarCard({ car }) {
         <SecondaryCarText>{car.id}</SecondaryCarText>
         <SecondaryCarText>{cutFirstFunctionality}</SecondaryCarText>
       </SecondaryInfo>
-      <LearnMoreBtn onClick={toggleModal}>Learn more</LearnMoreBtn>
+      <LearnMoreBtn type='button' onClick={toggleModal}>Learn more</LearnMoreBtn>
       {isShowModal && (
         <Modal onClose={toggleModal}>
           <CarDescribtion car={car} city={city} country={country} />

@@ -18,7 +18,7 @@ export const RentalCarModal = () => {
 
 export const LoadMoreBtn = ({ onClick }) => {
   return (
-    <LoadMoreButton  onClick={onClick}>
+    <LoadMoreButton type='button' onClick={onClick}>
       Load more
     </LoadMoreButton>
   );
